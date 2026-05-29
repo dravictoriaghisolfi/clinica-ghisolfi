@@ -1,2 +1,2 @@
 'use client'
-export { default } from '../../components/App'
+export { default } from '../components/App'
