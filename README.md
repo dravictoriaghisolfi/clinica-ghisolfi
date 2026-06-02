@@ -1,7 +1,7 @@
 # Clínica Ghisolfi — Sistema de Gestão
 
 ## Como publicar no Vercel
-
+ 
 ### Passo 1 — Instalar o Node.js
 Baixe em: https://nodejs.org (versão LTS)
 
