@@ -26,18 +26,18 @@ const gs = {
   app: { display:"flex", height:"100vh", fontFamily:"'Inter', -apple-system, sans-serif", background:C.cream, color:C.text, overflow:"hidden" },
   sidebar: { width:240, background:C.wineDark, display:"flex", flexDirection:"column", padding:"0 0 24px", flexShrink:0 },
   logo: { padding:"28px 24px 20px", borderBottom:`1px solid rgba(255,255,255,0.08)` },
-  logoTitle: { fontFamily:"'Inter', -apple-system, sans-serif", fontSize:16, color:C.white, letterSpacing:2, fontWeight:400 },
+  logoTitle: { fontFamily:"'Playfair Display', Georgia, serif", fontSize:16, color:C.white, letterSpacing:2, fontWeight:600, textTransform:'uppercase' },
   logoSub: { fontSize:11, color:C.goldLight, letterSpacing:2, marginTop:4, fontWeight:400 },
   navItem: (active) => ({ display:"flex", alignItems:"center", gap:12, padding:"11px 24px", cursor:"pointer", color: active ? C.goldLight : "rgba(255,255,255,0.6)", background: active ? "rgba(201,168,76,0.12)" : "transparent", borderLeft: active ? `3px solid ${C.gold}` : "3px solid transparent", fontSize:14, letterSpacing:0.5, transition:"all .18s" }),
-  navLabel: { fontSize:11, color:"rgba(255,255,255,0.25)", padding:"18px 24px 8px", letterSpacing:2, textTransform:"uppercase" },
+  navLabel: { fontSize:11, color:"rgba(255,255,255,0.25)", padding:"18px 24px 8px", letterSpacing:2, textTransform:"uppercase", fontFamily:"'Playfair Display', Georgia, serif" },
   main: { flex:1, display:"flex", flexDirection:"column", overflow:"hidden" },
   topbar: { background:C.white, borderBottom:`1px solid ${C.sand}`, padding:"16px 32px", display:"flex", alignItems:"center", justifyContent:"space-between", flexShrink:0 },
   content: { flex:1, overflowY:"auto", padding:"32px" },
   card: { background:C.white, borderRadius:16, border:`1px solid ${C.sand}`, padding:"28px", marginBottom:20 },
-  cardTitle: { fontSize:20, fontWeight:600, color:C.wine, fontFamily:"'Inter', -apple-system, sans-serif", letterSpacing:1, marginBottom:4 },
+  cardTitle: { fontSize:20, fontWeight:600, color:C.wine, fontFamily:"'Playfair Display', Georgia, serif", letterSpacing:2, marginBottom:4, textTransform:'uppercase' },
   grid2: { display:"grid", gridTemplateColumns:"1fr 1fr", gap:20 },
   grid4: { display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:16 },
-  label: { display:"block", fontSize:12, letterSpacing:0.8, color:C.textMuted, marginBottom:6, textTransform:"uppercase" },
+  label: { display:"block", fontSize:12, letterSpacing:1.5, color:C.textMuted, marginBottom:6, textTransform:"uppercase", fontFamily:"'Playfair Display', Georgia, serif", fontWeight:500 },
   input: { width:"100%", padding:"12px 16px", border:`1px solid ${C.sandDark}`, borderRadius:10, fontSize:15, background:C.cream, color:C.text, fontFamily:"'Inter', -apple-system, sans-serif", outline:"none", boxSizing:"border-box" },
   textarea: { width:"100%", padding:"12px 16px", border:`1px solid ${C.sandDark}`, borderRadius:10, fontSize:15, background:C.cream, color:C.text, fontFamily:"'Inter', -apple-system, sans-serif", outline:"none", resize:"vertical", minHeight:90, boxSizing:"border-box" },
   select: { width:"100%", padding:"12px 16px", border:`1px solid ${C.sandDark}`, borderRadius:10, fontSize:15, background:C.cream, color:C.text, fontFamily:"'Inter', -apple-system, sans-serif", outline:"none", cursor:"pointer", boxSizing:"border-box" },
@@ -45,7 +45,7 @@ const gs = {
   btnOutline: { padding:"10px 22px", background:"transparent", color:C.wine, border:`1.5px solid ${C.wine}`, borderRadius:10, fontSize:14, cursor:"pointer", fontFamily:"'Inter', -apple-system, sans-serif", letterSpacing:1 },
   statCard: { background:C.white, borderRadius:14, border:`1px solid ${C.sand}`, padding:"24px", textAlign:"center" },
   statNum: { fontSize:32, fontWeight:600, color:C.wine, fontFamily:"'Inter', -apple-system, sans-serif" },
-  statLabel: { fontSize:12, color:C.textMuted, letterSpacing:1, textTransform:"uppercase", marginTop:6 },
+  statLabel: { fontSize:12, color:C.textMuted, letterSpacing:1.5, textTransform:"uppercase", marginTop:6, fontFamily:"'Playfair Display', Georgia, serif" },
   tag: (color) => ({ display:"inline-block", padding:"3px 10px", borderRadius:20, fontSize:12, background: color==="gold"?C.goldAlpha:C.wineAlpha, color: color==="gold"?C.wine:C.wineLight, border:`1px solid ${color==="gold"?C.goldLight:C.wineLight}`, marginRight:4, marginBottom:4 }),
   table: { width:"100%", borderCollapse:"collapse" },
   th: { padding:"12px 16px", textAlign:"left", fontSize:11, color:C.textMuted, letterSpacing:1, textTransform:"uppercase", borderBottom:`1px solid ${C.sand}`, fontWeight:500 },
@@ -123,7 +123,7 @@ function Dashboard({ patients, consultas, pagamentos, leads, onNav }) {
   return (
     <div>
       <div style={{ marginBottom:32 }}>
-        <h1 style={{ fontSize:28, fontFamily:"'Inter', sans-serif", color:C.wine, fontWeight:400, marginBottom:6 }}>Visão Geral</h1>
+        <h1 style={{ fontSize:28, fontFamily:"'Playfair Display', serif", color:C.wine, fontWeight:600, marginBottom:6, textTransform:"uppercase", letterSpacing:2 }}>Visão Geral</h1>
         <p style={{ color:C.textMuted, fontSize:15 }}>{new Date().toLocaleDateString("pt-BR",{weekday:"long",day:"numeric",month:"long"})}</p>
       </div>
       <div style={gs.grid4}>
@@ -602,7 +602,7 @@ function Login({ onLogin }) {
       <div style={{ background:C.white, borderRadius:24, padding:"48px 56px", width:420, boxShadow:"0 40px 100px rgba(44,31,37,0.35)" }}>
         <div style={{ textAlign:"center", marginBottom:36 }}>
           <img src={`data:image/png;base64,${LOGO_B64}`} alt="Logo VG" style={{ width:220, display:"block", margin:"0 auto 4px" }} />
-          <h1 style={{ fontFamily:"'Inter', sans-serif", fontSize:20, color:C.wine, fontWeight:400, letterSpacing:3, margin:0 }}>CLÍNICA GHISOLFI</h1>
+          <h1 style={{ fontFamily:"'Playfair Display', serif", fontSize:20, color:C.wine, fontWeight:600, letterSpacing:3, margin:0, textTransform:"uppercase" }}>CLÍNICA GHISOLFI</h1>
           <div style={{ fontSize:11, color:C.gold, letterSpacing:4, marginTop:6, textTransform:"uppercase" }}>Estética & Odontologia</div>
         </div>
         <Field label="Usuário"><input style={gs.input} value={u} onChange={e=>setU(e.target.value)} onKeyDown={e=>e.key==="Enter"&&submit()} /></Field>
@@ -626,7 +626,7 @@ export default function App() {
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
+    link.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap";
     document.head.appendChild(link);
   }, []);
 
@@ -684,7 +684,7 @@ export default function App() {
       </div>
       <div style={gs.main}>
         <div style={gs.topbar}>
-          <div style={{ fontFamily:"'Inter', sans-serif", fontSize:18, color:C.wine, fontWeight:400 }}>{pageTitle[nav]}</div>
+          <div style={{ fontFamily:"'Playfair Display', serif", fontSize:18, color:C.wine, fontWeight:600, textTransform:"uppercase", letterSpacing:2 }}>{pageTitle[nav]}</div>
           <div style={{ display:"flex", alignItems:"center", gap:16 }}>
             <span style={{ fontSize:14, color:C.textMuted }}>{patients.length} pacientes · {consultas.length} consultas</span>
             <div style={{ width:36, height:36, borderRadius:"50%", background:C.wineAlpha, display:"flex", alignItems:"center", justifyContent:"center", fontSize:14, color:C.wine, fontWeight:600 }}>VG</div>
