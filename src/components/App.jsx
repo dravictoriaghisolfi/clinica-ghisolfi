@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "./supabase";
 
 const C = {
   wine: "#6B2D3E", wineLight: "#8B3D52", wineDark: "#4A1E2B",
